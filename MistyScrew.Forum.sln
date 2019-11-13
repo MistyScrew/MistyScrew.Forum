@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MistyScrew.Forum.Wui", "MistyScrew.Forum.Wui\MistyScrew.Forum.Wui.csproj", "{73A13A01-2FB3-4345-9812-9C9365F6890C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MistyScrew.Forum.DevConsole", "MistyScrew.Forum.DevConsole\MistyScrew.Forum.DevConsole.csproj", "{1E8AF637-670E-48EC-958D-90B5D2A4288C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MistyScrew.Forum.Client", "MistyScrew.Forum.Client\MistyScrew.Forum.Client.csproj", "{93A83FE2-17F1-4EC4-9324-71D44B80D198}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{73A13A01-2FB3-4345-9812-9C9365F6890C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73A13A01-2FB3-4345-9812-9C9365F6890C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73A13A01-2FB3-4345-9812-9C9365F6890C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8AF637-670E-48EC-958D-90B5D2A4288C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8AF637-670E-48EC-958D-90B5D2A4288C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8AF637-670E-48EC-958D-90B5D2A4288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8AF637-670E-48EC-958D-90B5D2A4288C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A83FE2-17F1-4EC4-9324-71D44B80D198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A83FE2-17F1-4EC4-9324-71D44B80D198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A83FE2-17F1-4EC4-9324-71D44B80D198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A83FE2-17F1-4EC4-9324-71D44B80D198}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

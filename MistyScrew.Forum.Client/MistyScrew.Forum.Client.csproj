@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NitroBolt.Functional" Version="1.0.46" />
+    <PackageReference Include="NitroBolt.HtmlParsing" Version="1.0.0" />
+    <PackageReference Include="NitroBolt.Immutable" Version="1.0.47" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.6.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
