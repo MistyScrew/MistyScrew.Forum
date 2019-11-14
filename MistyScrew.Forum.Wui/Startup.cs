@@ -21,7 +21,10 @@ namespace MistyScrew.Forum.Wui
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson();
+
+            services.AddSwaggerDocument();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -50,6 +53,9 @@ namespace MistyScrew.Forum.Wui
 
             app.UseRouting();
 
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -66,6 +72,9 @@ namespace MistyScrew.Forum.Wui
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
         }
     }
 }

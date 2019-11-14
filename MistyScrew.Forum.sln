@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MistyScrew.Forum.Wui", "MistyScrew.Forum.Wui\MistyScrew.Forum.Wui.csproj", "{73A13A01-2FB3-4345-9812-9C9365F6890C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MistyScrew.Forum.DevConsole", "MistyScrew.Forum.DevConsole\MistyScrew.Forum.DevConsole.csproj", "{1E8AF637-670E-48EC-958D-90B5D2A4288C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MistyScrew.Forum.DevConsole", "MistyScrew.Forum.DevConsole\MistyScrew.Forum.DevConsole.csproj", "{1E8AF637-670E-48EC-958D-90B5D2A4288C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MistyScrew.Forum.Client", "MistyScrew.Forum.Client\MistyScrew.Forum.Client.csproj", "{93A83FE2-17F1-4EC4-9324-71D44B80D198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MistyScrew.Forum.Client", "MistyScrew.Forum.Client\MistyScrew.Forum.Client.csproj", "{93A83FE2-17F1-4EC4-9324-71D44B80D198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C4E61F5-A035-4B19-BC3D-22440F84264F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
