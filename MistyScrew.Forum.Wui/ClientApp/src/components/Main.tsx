@@ -21,25 +21,28 @@ export class Main extends Component<{}, MainState> {
 
   render () {
     return (
-        <Table>
-            <tbody>
-                {
-                    this.state.areas.map((area, k) => {
-                        const areaRow = <tr key={k}><td><b>{area.name}</b></td></tr>;
+        <div>
+          <p>разделы</p>
+          <Table>
+              <tbody>
+                  {
+                      this.state.areas.map((area, k) => {
+                          const areaRow = <tr key={k}><td><b>{area.name}</b></td></tr>;
 
-                        const boardRows = area.boards.map((board, boardK) =>
-                            <tr key={`${k}-${boardK}`}>
-                                <td>
-                                    {board.title}{' '}{board.description}
-                                </td>
-                            </tr>
-                        );
+                          const boardRows = area.boards.map((board, boardK) =>
+                              <tr key={`${k}-${boardK}`}>
+                                  <td>
+                                      {board.title}{' '}{board.description}
+                                  </td>
+                              </tr>
+                          );
 
-                        return [areaRow, ...boardRows];
-                    })
-                }
-            </tbody>
-        </Table>
+                          return [areaRow, ...boardRows];
+                      })
+                  }
+              </tbody>
+          </Table>
+        </div>
     );
   }
 }
