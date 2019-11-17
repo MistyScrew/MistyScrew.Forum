@@ -32,7 +32,7 @@ export function BoardsView(props: { areas: Area[] }) {
                       .map((moderator, k) => (
                         [
                           k == 0 ? '' : ', ',
-                          <Link className='moderator' to={`user/${oc(moderator).name('')}`}>{oc(moderator).name('')}</Link>
+                          <Link key={k} className='moderator' to={`user/${oc(moderator).name('')}`}>{oc(moderator).name('')}</Link>
                         ]))
                   }
                 </td>
