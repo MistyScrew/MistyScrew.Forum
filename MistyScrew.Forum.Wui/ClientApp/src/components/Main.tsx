@@ -2,47 +2,31 @@ import React, { Component } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { Area, Board } from '../api/forum';
 import { Table } from 'reactstrap';
+import { BoardsView } from '../controls/BoardsView';
 
 export class Main extends Component<{}, MainState> {
   static displayName = Main.name;
 
   constructor(props: any) {
-      super(props);
+    super(props);
 
-      this.state = { areas: [] };
+    this.state = { areas: [] };
 
-      this.load();
+    this.load();
   }
 
   load = async () => {
-      const response: AxiosResponse<Area[]> = await axios.get('api/forum/areas');
-      this.setState({ areas: response.data });
+    const response: AxiosResponse<Area[]> = await axios.get('api/forum/areas');
+    this.setState({ areas: response.data });
   }
 
-  render () {
+  render() {
     return (
-        <div>
-          <p>разделы</p>
-          <Table>
-              <tbody>
-                  {
-                      this.state.areas.map((area, k) => {
-                          const areaRow = <tr key={k}><td><b>{area.name}</b></td></tr>;
+      <div>
+        <p>разделы</p>
+        <BoardsView areas={this.state.areas}/>
 
-                          const boardRows = area.boards.map((board, boardK) =>
-                              <tr key={`${k}-${boardK}`}>
-                                  <td>
-                                      {board.title}{' '}{board.description}
-                                  </td>
-                              </tr>
-                          );
-
-                          return [areaRow, ...boardRows];
-                      })
-                  }
-              </tbody>
-          </Table>
-        </div>
+      </div>
     );
   }
 }

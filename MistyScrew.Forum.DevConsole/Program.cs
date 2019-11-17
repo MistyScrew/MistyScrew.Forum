@@ -1,4 +1,5 @@
-﻿using NitroBolt.Functional;
+﻿using Newtonsoft.Json;
+using NitroBolt.Functional;
 using System;
 using System.Threading.Tasks;
 
@@ -11,12 +12,15 @@ namespace MistyScrew.Forum.DevConsole
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
             var areas = await ForumClient.Areas();
-            foreach (var area in areas)
-            {
-                Console.WriteLine($"a: {area.Name}");
-                foreach (var board in area.Boards.OrEmpty())
-                    Console.WriteLine($"  b:{board.Name} {board.Description}");
-            }
+            //foreach (var area in areas)
+            //{
+            //    Console.WriteLine($"a: {area.Name}");
+            //    foreach (var board in area.Boards.OrEmpty())
+            //        Console.WriteLine($"  b:{board.Name} {board.Description}");
+            //}
+            Console.WriteLine(JsonConvert.SerializeObject(areas, Formatting.Indented));
+            //foreach (var area in areas)
+            //    Console.WriteLine();
         }
     }
 }
