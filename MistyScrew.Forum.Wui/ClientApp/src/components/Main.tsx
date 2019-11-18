@@ -23,7 +23,7 @@ export class Main extends Component<{}, MainState> {
   render() {
     return (
       <div>
-        <p>разделы</p>
+        <p>Разделы</p>
         <BoardsView areas={this.state.areas}/>
 
       </div>
