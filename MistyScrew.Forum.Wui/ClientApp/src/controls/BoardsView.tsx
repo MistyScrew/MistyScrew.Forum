@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Area, Board } from '../api/forum';
 import { Table } from 'reactstrap';
 import { oc } from 'ts-optchain';
@@ -18,7 +18,7 @@ export function BoardsView(props: { areas: Area[] }) {
             const boardRows = area.boards.map((board, boardK) =>
               <tr key={`${k}-${boardK}`} className='board'>
                 <td>
-                  {oc(board).title('')}{' '}{oc(board).description('')}
+                  {oc(board).title('')}<br/>{oc(board).description('')}
                 </td>
                 <td>
                   {oc(board).state.threadCount()}
