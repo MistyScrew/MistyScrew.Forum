@@ -24,6 +24,9 @@ export function BoardsView(props: { areas: Area[] }) {
                   {oc(board).state.threadCount()}
                 </td>
                 <td>
+                  {oc(board).state.postCount()}
+                </td>
+                <td>
                   {moment(oc(board).state.lastPost.time('')).format("DD.MM.YYYY HH:mm:ss")}
                 </td>
                 <td>
