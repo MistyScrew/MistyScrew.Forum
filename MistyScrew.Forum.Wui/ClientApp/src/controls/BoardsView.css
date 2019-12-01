@@ -5,3 +5,12 @@
 .board .description {
     font-size: 70%;
 }
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 768px) {
+    .board .td-moderators {
+        display: none;
+    }
+}

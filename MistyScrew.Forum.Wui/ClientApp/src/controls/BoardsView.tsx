@@ -29,7 +29,7 @@ export function BoardsView(props: { areas: Area[] }) {
                 <td>
                   {moment(oc(board).state.lastPost.time('')).format("DD.MM.YYYY HH:mm:ss")}
                 </td>
-                <td>
+                <td className='td-moderators'>
                   {
                     oc(board).moderators([])
                       .map((moderator, k) => (
