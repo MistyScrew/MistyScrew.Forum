@@ -24,5 +24,12 @@ namespace MistyScrew.Forum.Wui.Controllers
         {
             return await ForumClient.Areas();
         }
+
+        [HttpGet("board/{boardName}/threads")]
+        public async Task<IEnumerable<Thread>> BoardThreads(string boardName)
+        {
+            return await ForumClient.Threads(boardName);
+        }
+
     }
 }

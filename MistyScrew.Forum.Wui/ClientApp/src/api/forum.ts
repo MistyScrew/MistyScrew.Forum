@@ -11,6 +11,10 @@ export interface Board {
   state?: BoardState;
 }
 
+export interface Board_Name {
+  name: string;
+}
+
 interface BoardState {
   isFlashed?: boolean;
   threadCount?: number;
@@ -26,4 +30,9 @@ interface BoardLastPost {
 
 interface User_Name {
   name: string;
+}
+
+export interface Thread {
+  id: string;
+  title?: string;
 }

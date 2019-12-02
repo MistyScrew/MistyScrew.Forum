@@ -18,7 +18,8 @@ export function BoardsView(props: { areas: Area[] }) {
             const boardRows = area.boards.map((board, boardK) =>
               <tr key={`${k}-${boardK}`} className='board'>
                 <td>
-                        {oc(board).title('')}<br /><span className='description'>{oc(board).description('')}</span>
+                  <Link to={`board/${oc(board).name('')}`}>{oc(board).title('')}</Link><br />
+                  <span className='description'>{oc(board).description('')}</span>
                 </td>
                 <td>
                   {oc(board).state.threadCount()}
