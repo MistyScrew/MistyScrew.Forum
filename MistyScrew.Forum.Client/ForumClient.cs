@@ -1,6 +1,7 @@
 ﻿using NitroBolt.Functional;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,13 +11,14 @@ using System.Xml.Linq;
 
 namespace MistyScrew.Forum
 {
-    public class ForumClient
+    public partial class ForumClient
     {
+        public static readonly string BaseUrl = "https://forumbgz.ru/";
         public async static Task<Area[]> Areas()
         {
             using var httpClient = new HttpClient();
 
-            var html_bytes = await httpClient.GetByteArrayAsync("https://forumbgz.ru/ubbthreads.php");
+            var html_bytes = await httpClient.GetByteArrayAsync(BaseUrl + "ubbthreads.php");
             var html_raw = Ru.GetString(html_bytes);
             var xhtml = NitroBolt.HtmlParsing.HtmlHelper.LoadXElementFromText(html_raw);
 
@@ -93,7 +95,7 @@ namespace MistyScrew.Forum
         static System.Text.Encoding Ru = System.Text.Encoding.GetEncoding(1251);
         static System.Globalization.CultureInfo RuCulture = System.Globalization.CultureInfo.GetCultureInfo("RU-ru");
 
-        static Dictionary<string, string[]> ParseQuery(string url)
+        static Dictionary<string, string[]> ParseQuery([AllowNull] string url)
         {
             var questionIndex = url?.IndexOf('?');
             if (questionIndex >= 0)

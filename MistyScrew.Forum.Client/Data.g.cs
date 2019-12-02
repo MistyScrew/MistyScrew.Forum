@@ -29,16 +29,6 @@ namespace MistyScrew.Forum
         }
     }
 
-    public static partial class AreaHelper
-    {
-        public static Area By(this IEnumerable<Area> items, string name = null)
-        {
-            if (name != null)
-                return items.FirstOrDefault(_item => _item.Name == name);
-            return null;
-        }
-    }
-
     partial class Board
     {
         public Board(string name, string title, string description, User_Name[] moderators = null, BoardState state = null)
@@ -61,22 +51,6 @@ namespace MistyScrew.Forum
         }
     }
 
-    public static partial class BoardHelper
-    {
-        public static Board By(this IEnumerable<Board> items, string name = null, string title = null, string description = null, BoardState state = null)
-        {
-            if (name != null)
-                return items.FirstOrDefault(_item => _item.Name == name);
-            if (title != null)
-                return items.FirstOrDefault(_item => _item.Title == title);
-            if (description != null)
-                return items.FirstOrDefault(_item => _item.Description == description);
-            if (state != null)
-                return items.FirstOrDefault(_item => _item.State == state);
-            return null;
-        }
-    }
-
     partial class BoardState
     {
         public BoardState(bool ? isFlashed, int ? threadCount, int ? postCount, BoardStateLastPost lastPost = null)
@@ -90,22 +64,6 @@ namespace MistyScrew.Forum
         public BoardState With(bool ? isFlashed = null, int ? threadCount = null, int ? postCount = null, BoardStateLastPost lastPost = null)
         {
             return new BoardState(isFlashed ?? IsFlashed, threadCount ?? ThreadCount, postCount ?? PostCount, lastPost ?? LastPost);
-        }
-    }
-
-    public static partial class BoardStateHelper
-    {
-        public static BoardState By(this IEnumerable<BoardState> items, bool ? isFlashed = null, int ? threadCount = null, int ? postCount = null, BoardStateLastPost lastPost = null)
-        {
-            if (isFlashed != null)
-                return items.FirstOrDefault(_item => _item.IsFlashed == isFlashed);
-            if (threadCount != null)
-                return items.FirstOrDefault(_item => _item.ThreadCount == threadCount);
-            if (postCount != null)
-                return items.FirstOrDefault(_item => _item.PostCount == postCount);
-            if (lastPost != null)
-                return items.FirstOrDefault(_item => _item.LastPost == lastPost);
-            return null;
         }
     }
 
@@ -124,20 +82,6 @@ namespace MistyScrew.Forum
         }
     }
 
-    public static partial class BoardStateLastPostHelper
-    {
-        public static BoardStateLastPost By(this IEnumerable<BoardStateLastPost> items, string id = null, User_Name user = null, DateTime? time = null)
-        {
-            if (id != null)
-                return items.FirstOrDefault(_item => _item.Id == id);
-            if (user != null)
-                return items.FirstOrDefault(_item => _item.User == user);
-            if (time != null)
-                return items.FirstOrDefault(_item => _item.Time == time);
-            return null;
-        }
-    }
-
     partial class User_Name
     {
         public User_Name(string name)
@@ -151,13 +95,21 @@ namespace MistyScrew.Forum
         }
     }
 
-    public static partial class User_NameHelper
+    partial class Thread
     {
-        public static User_Name By(this IEnumerable<User_Name> items, string name = null)
+        public Thread(string id, string title, User_Name creator = null, int ? views = null, int ? replies = null, int ? rating = null)
         {
-            if (name != null)
-                return items.FirstOrDefault(_item => _item.Name == name);
-            return null;
+            Id = id;
+            Title = title;
+            Creator = creator ?? Creator;
+            Views = views ?? Views;
+            Replies = replies ?? Replies;
+            Rating = rating ?? Rating;
+        }
+
+        public Thread With(string id = null, string title = null, User_Name creator = null, int ? views = null, int ? replies = null, int ? rating = null)
+        {
+            return new Thread(id ?? Id, title ?? Title, creator ?? Creator, views ?? Views, replies ?? Replies, rating ?? Rating);
         }
     }
 }

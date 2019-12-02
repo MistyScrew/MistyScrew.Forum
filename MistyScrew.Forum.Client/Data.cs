@@ -36,4 +36,14 @@ namespace MistyScrew.Forum
     {
         public readonly string Name;
     }
+
+    public partial class Thread
+    {
+        public readonly string Id;
+        public readonly string Title;
+        public readonly User_Name Creator = null;
+        public readonly int Views = 0;
+        public readonly int Replies = 0;
+        public readonly int Rating = 0;
+    }
 }

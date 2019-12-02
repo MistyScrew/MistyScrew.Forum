@@ -11,14 +11,17 @@ namespace MistyScrew.Forum.DevConsole
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            var areas = await ForumClient.Areas();
+            var threads = await ForumClient.Threads("society");
+            Console.WriteLine(JsonConvert.SerializeObject(threads, Formatting.Indented));
+
+            //var areas = await ForumClient.Areas();
+            //Console.WriteLine(JsonConvert.SerializeObject(areas, Formatting.Indented));
             //foreach (var area in areas)
             //{
             //    Console.WriteLine($"a: {area.Name}");
             //    foreach (var board in area.Boards.OrEmpty())
             //        Console.WriteLine($"  b:{board.Name} {board.Description}");
             //}
-            Console.WriteLine(JsonConvert.SerializeObject(areas, Formatting.Indented));
             //foreach (var area in areas)
             //    Console.WriteLine();
         }
