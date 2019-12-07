@@ -21,13 +21,13 @@ export function BoardsView(props: { areas: Area[] }) {
                   <Link to={`board/${oc(board).name('')}`}>{oc(board).title('')}</Link><br />
                   <span className='description'>{oc(board).description('')}</span>
                 </td>
-                <td>
+                <td className='td-right'>
                   {oc(board).state.threadCount()}
                 </td>
-                <td>
+                <td className='td-right'>
                   {oc(board).state.postCount()}
                 </td>
-                <td>
+                <td className='td-center'>
                   {moment(oc(board).state.lastPost.time('')).format("DD.MM.YYYY HH:mm:ss")}
                 </td>
                 <td className='td-moderators'>

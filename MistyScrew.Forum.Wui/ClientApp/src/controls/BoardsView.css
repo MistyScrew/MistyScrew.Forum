@@ -14,3 +14,11 @@
         display: none;
     }
 }
+
+.board .td-right {
+    text-align: right;
+}
+
+.board .td-center {
+    text-align: center;
+}
