@@ -7,6 +7,9 @@
 }
 
 @media (max-width: 375px) {
+    .board .td-postcount {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -15,10 +18,14 @@
     }
 }
 
-.board .td-right {
+.board .td-threadcount {
     text-align: right;
 }
 
-.board .td-center {
+.board .td-postcount {
+    text-align: right;
+}
+
+.board .td-lastpost {
     text-align: center;
 }
