@@ -46,4 +46,11 @@ namespace MistyScrew.Forum
         public readonly int Replies = 0;
         public readonly int Rating = 0;
     }
+
+    public partial class Post
+    {
+        public readonly int Id;
+        public readonly string Title;
+        public readonly string Body;
+    }
 }

@@ -112,4 +112,19 @@ namespace MistyScrew.Forum
             return new Thread(id ?? Id, title ?? Title, creator ?? Creator, views ?? Views, replies ?? Replies, rating ?? Rating);
         }
     }
+
+    partial class Post
+    {
+        public Post(int id, string title, string body)
+        {
+            Id = id;
+            Title = title;
+            Body = body;
+        }
+
+        public Post With(int ? id = null, string title = null, string body = null)
+        {
+            return new Post(id ?? Id, title ?? Title, body ?? Body);
+        }
+    }
 }

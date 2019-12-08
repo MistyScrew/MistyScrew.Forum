@@ -11,8 +11,11 @@ namespace MistyScrew.Forum.DevConsole
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            var threads = await ForumClient.Threads("society");
-            Console.WriteLine(JsonConvert.SerializeObject(threads, Formatting.Indented));
+            var posts = await ForumClient.Thread(13392407);
+            Console.WriteLine(JsonConvert.SerializeObject(posts, Formatting.Indented));
+
+            //var threads = await ForumClient.Threads("society");
+            //Console.WriteLine(JsonConvert.SerializeObject(threads, Formatting.Indented));
 
             //var areas = await ForumClient.Areas();
             //Console.WriteLine(JsonConvert.SerializeObject(areas, Formatting.Indented));
