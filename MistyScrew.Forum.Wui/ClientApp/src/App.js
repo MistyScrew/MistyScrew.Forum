@@ -15,10 +15,11 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Main} />
-        <Route path='/board/:name' render={(props) => <BoardView boardName={props.match.params.name} />} />
-
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data' component={FetchData} />
+
+        <Route path='/:boardName' render={(props) => <BoardView boardName={props.match.params.boardName} />} />
+
       </Layout>
     );
   }
