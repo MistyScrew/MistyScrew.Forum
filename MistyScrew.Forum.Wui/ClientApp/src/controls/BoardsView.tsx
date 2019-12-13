@@ -5,6 +5,18 @@ import { oc } from 'ts-optchain';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import './BoardsView.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUser as faSolidUser,  } from '@fortawesome/free-solid-svg-icons'
+import { faUser as faRegularUser } from '@fortawesome/free-regular-svg-icons'
+
+library.add(faSolidUser, faRegularUser);
+
+function ReadingBulb({ isFlashed }: { isFlashed: boolean }) {
+  const icon = isFlashed ? faSolidUser : faRegularUser;
+  return <FontAwesomeIcon className='active' icon={icon} />;
+}
 
 export function BoardsView(props: { areas: Area[] }) {
   const { areas } = props;
@@ -18,6 +30,7 @@ export function BoardsView(props: { areas: Area[] }) {
             const boardRows = area.boards.map((board, boardK) =>
               <tr key={`${k}-${boardK}`} className='board'>
                 <td>
+                  <ReadingBulb isFlashed={oc(board).state.isFlashed(false)} />
                   <Link to={`${oc(board).name('')}`}>{oc(board).title('')}</Link><br />
                   <span className='description'>{oc(board).description('')}</span>
                 </td>
