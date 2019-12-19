@@ -30,7 +30,7 @@ export function BoardsView(props: { areas: Area[] }) {
             const boardRows = area.boards.map((board, boardK) =>
               <tr key={`${k}-${boardK}`} className='board'>
                 <td>
-                  <ReadingBulb isFlashed={oc(board).state.isFlashed(false)} />
+                  <span className='readingbulb'><ReadingBulb isFlashed={oc(board).state.isFlashed(false)} /></span>
                   <Link to={`${oc(board).name('')}`}>{oc(board).title('')}</Link><br />
                   <span className='description'>{oc(board).description('')}</span>
                 </td>

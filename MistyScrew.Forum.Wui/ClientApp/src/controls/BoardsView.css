@@ -29,3 +29,7 @@
 .board .td-lastpost {
     text-align: center;
 }
+
+.board .readingbulb {
+    padding-right: 1em;
+}
