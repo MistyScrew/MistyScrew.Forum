@@ -6,8 +6,8 @@
     font-size: 70%;
 }
 
-@media (max-width: 375px) {
-    .board .td-postcount {
+@media (max-width: 425px) {
+    .board .td-threadcount, .td-postcount, .td-lastpost {
         display: none;
     }
 }
