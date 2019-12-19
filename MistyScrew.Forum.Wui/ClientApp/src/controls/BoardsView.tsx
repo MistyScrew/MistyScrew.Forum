@@ -8,13 +8,13 @@ import './BoardsView.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser as faSolidUser,  } from '@fortawesome/free-solid-svg-icons'
-import { faUser as faRegularUser } from '@fortawesome/free-regular-svg-icons'
+import { faLightbulb as faSolidLightbulb} from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb as faRegularLightbulb } from '@fortawesome/free-regular-svg-icons'
 
-library.add(faSolidUser, faRegularUser);
+library.add(faSolidLightbulb, faRegularLightbulb);
 
 function ReadingBulb({ isFlashed }: { isFlashed: boolean }) {
-  const icon = isFlashed ? faSolidUser : faRegularUser;
+    const icon = isFlashed ? faSolidLightbulb : faRegularLightbulb;
   return <FontAwesomeIcon className='active' icon={icon} />;
 }
 
